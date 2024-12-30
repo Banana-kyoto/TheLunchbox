@@ -42,13 +42,28 @@
             z-index: 50; /* Put nav above other content */
         }
 
-        /* Add padding-top to the banner to avoid being overlapped by the fixed nav */
-        .banner {
-            padding-top: 4rem; /* Adjust this value based on nav height */
-        }
+       /* Add padding-top to the banner to avoid being overlapped by the fixed nav */
+.banner {
+    padding-top: calc(4rem + 20px); /* Adjust this based on your nav bar height */
+    
+    background-position: top center; /* Align the image to the top */
+}
+
+        @media (max-width: 640px) {
+            .text-box {
+                position: absolute;
+                margin-top: 100px;
+                top: 0; /* ตั้งตำแหน่งที่ด้านบน */
+                left: 50%; /* ตั้งกลางแนวนอน */
+                transform: translateX(-50%); /* ปรับตำแหน่งให้ตรงกลาง */
+                padding: 1rem; /* เพิ่ม padding ให้กับกล่องข้อความ */
+                text-align: center; /* ทำให้ข้อความอยู่กลาง */
+    
+            }
+        }  
+
+
     </style>
-
-
 
 </head>
 <body>
@@ -131,12 +146,13 @@
 
     <!--รูป BG -->  
     <div class="banner bg-[url('/src/images/BG.png')] bg-cover bg-center min-h-screen flex items-center justify-start">
+        <div class="text-box"> 
         <div class="text-left pl-6"> 
             <h1 class="text-5xl font-extrabold sm:text-7xl">
                 The Lunchbox
             </h1>
             <h2><strong class="font-extrabold text-red-700 sm:block text-2xl">Where Flavors Tell Stories</strong></h2>
-        </div>
+        </div></div>
     </div>
         </div>
     </section>
