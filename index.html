@@ -17,6 +17,7 @@
           }
         }
     </script>
+  
     <style>
         /* Remove redundant styles for Tailwind responsiveness, keeping only necessary overrides */
         @media (max-width: 768px) {
@@ -49,6 +50,7 @@
                 text-align: center;
             }
         }
+
     </style>
 </head>
 <body>
@@ -117,10 +119,15 @@
                         Discover Thailand’s culinary heritage with meals in traditional pinto tins, crafted from local ingredients and delivered fresh in 30 minutes.
                     </p>
                 </div>
+                <div class="mt-4 hidden sm:block">
+                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600">
+                        Order Now
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-
+    
     <!--About us-->
 
     <section id="Abouts-Us" class="bg-pink-600 py-20 px-12 pt-10 pb-20">
@@ -203,42 +210,162 @@
   
     <!-- การ์ด -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-        <!-- Card 1 -->
      <!-- Card 1 -->
 <div class="relative bg-black rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
-    <img src="https://dabbadrop.co.uk/cdn/shop/files/OntheMenuArtwork_1.jpg?v=1706091503&width=880" alt="Signature Dish" class="w-full h-64 object-cover">
+    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-gray-900 text-white">
-        <button class="bg-[#FCECE0] text-black px-3 py-1 rounded-full mb-1">1 FEB</button>
-        <h3 class="text-xl font-bold mb-2">Signature Dish</h3>
-      <p class="text-sm">Explore our top-rated Thai dishes crafted with love and authenticity.</p>
+        <button class="bg-yellow-300 text-sm text-black px-3 py-1 rounded-full mb-1">1 FEB</button>
+        <h3 class="text-xl font-bold mb-2">Pad Thai</h3> <!-- เปลี่ยนชื่อเมนูที่นี่ -->
+        <p class="text-sm">Experience the authentic flavors of Thailand with our signature , crafted with care and love.</p> <!-- เปลี่ยนคำอธิบายที่นี่ -->
     </div>
-  </div>
-  
-  <!-- Card 2 -->
-  <div class="relative bg-black rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
-    <img src="https://dabbadrop.co.uk/cdn/shop/files/OntheMenuArtworkcopy6.png?v=1685449947&width=880" alt="Fresh Ingredients" class="w-full h-64 object-cover">
+</div>
+
+<!-- Card 2 -->
+<div class="relative bg-black rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
+    <img src="https://d3h1lg3ksw6i6b.cloudfront.net/media/image/2023/04/24/5608757681874e1ea5df1aa41d5b2e3d_How_To_Make_Tom_Yam_Kung_The_Epitome_Of_Delicious_And_Nutritious_Thai_Cuisine3.jpg" alt="Fresh Ingredients" class="w-full h-64 object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-gray-900 text-white">
-        <button class="bg-[#FCECE0] text-black px-3 py-1 rounded-full mb-1">2 FEB</button>
-        <h3 class="text-xl font-bold mb-2">Fresh Ingredients</h3>
-      <p class="text-sm">We use only the freshest, locally-sourced ingredients for every meal.</p>
+        <button class="bg-yellow-300 text-sm text-black px-3 py-1 rounded-full mb-1">2 FEB</button>
+        <h3 class="text-xl font-bold mb-2">Tom Yum Soup</h3> <!-- เปลี่ยนชื่อเมนูที่นี่ -->
+        <p class="text-sm">A deliciously spicy and tangy soup, made with the freshest ingredients and bold flavors.</p> <!-- เปลี่ยนคำอธิบายที่นี่ -->
     </div>
-  </div>
-  
-  <!-- Card 3 -->
-  <div class="relative bg-black rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
-    <img src="https://dabbadrop.co.uk/cdn/shop/files/OntheMenuArtwork_13_copy_db869c19-60aa-4db0-9c04-ced2ffca4cbc.png?v=1734702711&width=880" alt="Cultural Experience" class="w-full h-64 object-cover">
+</div>
+
+<!-- Card 3 -->
+<div class="relative bg-black rounded-lg overflow-hidden shadow-md transform transition duration-300 hover:scale-105">
+    <img src="https://hot-thai-kitchen.com/wp-content/uploads/2022/04/green-curry-new-sq-3.jpg" alt="Cultural Experience" class="w-full h-64 object-cover">
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-gray-900 text-white">
-        <button class="bg-[#FCECE0] text-black px-3 py-1 rounded-full mb-1">3 FEB</button>
-      <h3 class="text-xl font-bold mb-2">Cultural Experience</h3>
-      <p class="text-sm">Dive into the rich cultural heritage of Thai cuisine with every bite.</p>
+        <button class="bg-yellow-300 text-black text-sm px-3 py-1 rounded-full mb-1">3 FEB</button>
+        <h3 class="text-xl font-bold mb-2">Green Curry</h3> <!-- เปลี่ยนชื่อเมนูที่นี่ -->
+        <p class="text-sm">Indulge in the creamy richness of our Green Curry, made with fresh herbs and spices.</p> <!-- เปลี่ยนคำอธิบายที่นี่ -->
     </div>
-  </div>
-  
+</div>
   </section>
-  
+  <section id="Reviews" class="py-20 px-6 sm:px-20 lg:px-30 bg-[#FCECE0]"> 
+    <h2 class="text-5xl font-bold text-center mb-10 text-green-700">
+        What Our Customers Think About The Lunchbox
+    </h2>
+    <div class="flex overflow-x-auto space-x-6">
+        <!-- Card 1 -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex-none w-80 transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-lg font-semibold text-gray-800">Delicious and Authentic!</span>
+                <div class="flex items-center">
+                    <span class="text-yellow-400">★★★★★</span>
+                </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "The flavors are amazing! The traditional pinto tins add a nostalgic touch that makes every meal a delight."
+            </p>
+            <div class="text-sm text-gray-500">
+                <span>Reviewed by <strong>Jane Doe</strong></span> • 
+                <span>December 15, 2024</span>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex-none w-80 transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-lg font-semibold text-gray-800">Quick and Fresh Delivery</span>
+                <div class="flex items-center">
+                    <span class="text-yellow-400">★★★★☆</span>
+                </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "Delivery was super fast, and the food was fresh and delicious. Highly recommend!"
+            </p>
+            <div class="text-sm text-gray-500">
+                <span>Reviewed by <strong>John Smith</strong></span> • 
+                <span>December 10, 2024</span>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex-none w-80 transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-lg font-semibold text-gray-800">Great Value for Money</span>
+                <div class="flex items-center">
+                    <span class="text-yellow-400">★★★★★</span>
+                </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "Affordable and delicious! The packaging is eco-friendly, which I truly appreciate."
+            </p>
+            <div class="text-sm text-gray-500">
+                <span>Reviewed by <strong>Emily Davis</strong></span> • 
+                <span>November 28, 2024</span>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white shadow-md rounded-lg p-6 flex-none w-80 transition-transform duration-300 hover:scale-105">
+            <div class="flex items-center justify-between mb-4">
+                <span class="text-lg font-semibold text-gray-800">Perfect for Busy Days</span>
+                <div class="flex items-center">
+                    <span class="text-yellow-400">★★★★☆</span>
+                </div>
+            </div>
+            <p class="text-gray-600 mb-4">
+                "Convenient and tasty meals delivered right to my door. Makes my life so much easier!"
+            </p>
+            <div class="text-sm text-gray-500">
+                <span>Reviewed by <strong>Michael Brown</strong></span> • 
+                <span>November 20, 2024</span>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="bg-pink-600 py-10 px-6 sm:px-20 lg:px-30">
+    <div class="container mx-auto">
+        <!-- Newsletter Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold text-white mb-4">Join our newsletter to stay up to date</h3>
+            <div class="flex justify-center">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="w-full max-w-md p-3 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-pink-400"
+                >
+                <button 
+                    class="bg-yellow-300 text-pink-600 px-6 py-3 rounded-r-lg font-semibold hover:bg-green-800 transition">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-6">
+            <a href="#" aria-label="Facebook">
+                <img 
+                    src="https://static.vecteezy.com/system/resources/previews/022/013/808/non_2x/f-initial-letter-for-logo-company-isolated-vector.jpg" 
+                    alt="Facebook" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="Instagram">
+                <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Instagram_logo.png/768px-Instagram_logo.png" 
+                    alt="Instagram" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="TikTok">
+                <img 
+                    src="https://img.freepik.com/premium-vector/set-tiktok-app-icons-social-media-logo-vector-illustration_277909-592.jpg?semt=ais_hybrid" 
+                    alt="TikTok" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="mt-10 text-center text-gray-700 text-sm">
+        &copy; 2025 The Lunchbox. All rights reserved.
+    </div>
+</footer>
 
 
 </body>
