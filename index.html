@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -51,6 +54,9 @@
             }
         }
 
+       body {
+            font-family: Fredoka;
+        }
     </style>
 </head>
 <body>
@@ -72,7 +78,8 @@
                 <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
-                            <a href="#" class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Products</a>
+                            <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto">
+                            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white :" aria-current="page">Products</a>
                             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Menu</a>
                             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reviews</a>
                             <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gift</a>
@@ -89,7 +96,7 @@
 
 
                 <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600">
+                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-yellow-300">
                         <span class="sr-only">Order Now</span>
                         Order Now
                     </button>
@@ -106,21 +113,22 @@
         </div>
     </nav>
 
-    <div class="banner bg-[url('/src/images/BG.png')] bg-cover bg-center min-h-screen flex items-center justify-start relative">
+    <div class="banner bg-[url('https://verveculture.com/cdn/shop/files/VCINTS3_6.jpg?v=1699302713&width=14452')] bg-cover bg-center min-h-screen flex items-center justify-start relative">
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
         <div class="text-box">
             <div class="text-left pl-12">
-                <h1 class="text-5xl font-extrabold sm:text-7xl">
+                <h1 class="text-5xl text-white font-semibold sm:text-7xl ">
                     The Lunchbox
                 </h1>
-                <h2><strong class="font-extrabold text-pink-600 sm:block text-2xl">Where Flavors Tell Stories</strong></h2>
-                <div class="max-w-md pt-5 rounded-lg text-black hidden sm:block">
-                    <p class="text-base text-black-700">
-                        Discover Thailand’s culinary heritage with meals in traditional pinto tins, crafted from local ingredients and delivered fresh in 30 minutes.
+               <h2 class="font-light text-white text-xl tracking-wider block sm:hidden text-center">Where Flavors Tell Stories</h2>
+
+                <div class="max-w-md pt-5 pl-4 rounded-lg text-black text-1xl hidden sm:block">
+                    <p class="text-base text-xl text-white ">
+                        Discover Thailand’s culinary heritage with meals in traditional "Pinto", crafted from local ingredients and delivered fresh in 30 minutes.
                     </p>
                 </div>
-                <div class="mt-4 hidden sm:block">
-                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600">
+                <div class="mt-4 hidden sm:block pl-4">
+                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-yellow-300">
                         Order Now
                     </button>
                 </div>
@@ -132,7 +140,7 @@
 
     <section id="Abouts-Us" class="bg-pink-600 py-20 px-12 pt-10 pb-20">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-6 text-white">About Us</h2>
+            <h2 class="text-3xl font-semibold text-center mb-6 text-white">About Us</h2>
             <p class="text-lg text-white">
                 At "The Lunchbox," we don’t just serve meals; we offer an experience that blends the deliciousness of Thai flavors with the rich traditions of the country. We take pride in sourcing fresh, locally-grown ingredients, and each dish we prepare reflects the diversity of authentic Thai flavors, filled with history and culture.
             </p>
@@ -141,7 +149,7 @@
 
     <!--How it works -->
     <section id="how-it-works" class="py-20 px-6 sm:px-20 lg:px-30 bg-[#FCECE0]"> 
-        <h2 class="text-5xl font-bold text-center mb-6 text-green-700">How it works</h2>
+        <h2 class="text-5xl font-semibold text-center mb-6 text-green-700">How it works</h2>
        <!-- Step 01 -->
         <div class="mx-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8 pt-5">
             <div class="flex flex-col items-center sm:items-start">
@@ -182,7 +190,7 @@
     </div>
 
     <div class="flex flex-col sm:items-start">
-      <h3 class="text-4xl font-semibold text-center sm:text-left mt-6 mb-4 text-green-700">03. Heat, Eat & Repeat</h3>
+      <h3 class="text-4xl font-semibold text-center sm:text-left mt-6 mb-4 text-green-700">3. Heat, Eat & Repeat</h3>
       <p class="text-lg text-gray-700 text-center sm:text-left">
         Your meal arrives ready to heat in just 30 minutes—no cooking or prep required. After enjoying your meal, we’ll pick up your empty tins during the next delivery. It’s easy, sustainable, and hassle-free!
       </p>
@@ -195,14 +203,14 @@
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start justify-between">
       <!-- ส่วนหัวข้อ -->
       <div class="md:w-3/4">
-        <h2 class="text-3xl font-bold text-left text-white mb-4">What’s Cooking Next</h2>
+        <h2 class="text-3xl font-semibold text-left text-white mb-4">What’s Cooking Next</h2>
         <p class="text-lg text-white text-left mb-6">
             At The Lunchbox, we prepare fresh meals daily and continuously create new, exciting dishes. 
             Join us on a flavorful journey as we explore and craft menus that celebrate the heart of Thai cuisine—always fresh, always inspired.
       </div>
       <!-- ปุ่ม View All Menus -->
       <div class="md:w-1/4 flex justify-end">
-        <a href="#menu" class="bg-yellow-300 text-pink-600 py-3 px-6 rounded-lg font-bold shadow-md hover:bg-gray-200 transition">
+        <a href="#menu" class="bg-yellow-300 text-pink-600 py-3 px-6 rounded-lg font-semi-bold shadow-md hover:bg-gray-200 transition">
           View All Menus
         </a>
       </div>
@@ -216,7 +224,7 @@
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-gray-900 text-white">
         <button class="bg-yellow-300 text-sm text-black px-3 py-1 rounded-full mb-1">1 FEB</button>
-        <h3 class="text-xl font-bold mb-2">Pad Thai</h3> <!-- เปลี่ยนชื่อเมนูที่นี่ -->
+        <h3 class="text-xl font-semi-bold mb-2">Pad Thai</h3> 
         <p class="text-sm">Experience the authentic flavors of Thailand with our signature , crafted with care and love.</p> <!-- เปลี่ยนคำอธิบายที่นี่ -->
     </div>
 </div>
@@ -227,7 +235,7 @@
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-gray-900 text-white">
         <button class="bg-yellow-300 text-sm text-black px-3 py-1 rounded-full mb-1">2 FEB</button>
-        <h3 class="text-xl font-bold mb-2">Tom Yum Soup</h3> <!-- เปลี่ยนชื่อเมนูที่นี่ -->
+        <h3 class="text-xl font-semi-bold mb-2">Tom Yum Soup</h3> 
         <p class="text-sm">A deliciously spicy and tangy soup, made with the freshest ingredients and bold flavors.</p> <!-- เปลี่ยนคำอธิบายที่นี่ -->
     </div>
 </div>
@@ -238,13 +246,13 @@
     <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent"></div>
     <div class="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-gray-900 text-white">
         <button class="bg-yellow-300 text-black text-sm px-3 py-1 rounded-full mb-1">3 FEB</button>
-        <h3 class="text-xl font-bold mb-2">Green Curry</h3> <!-- เปลี่ยนชื่อเมนูที่นี่ -->
+        <h3 class="text-xl font-semi-bold mb-2">Green Curry</h3> 
         <p class="text-sm">Indulge in the creamy richness of our Green Curry, made with fresh herbs and spices.</p> <!-- เปลี่ยนคำอธิบายที่นี่ -->
     </div>
 </div>
   </section>
   <section id="Reviews" class="py-20 px-6 sm:px-20 lg:px-30 bg-[#FCECE0]"> 
-    <h2 class="text-5xl font-bold text-center mb-10 text-green-700">
+    <h2 class="text-5xl font-semibold text-center mb-10 text-green-700">
         What Our Customers Think About The Lunchbox
     </h2>
     <div class="flex overflow-x-auto space-x-6">
@@ -366,7 +374,5 @@
         &copy; 2025 The Lunchbox. All rights reserved.
     </div>
 </footer>
-
-
 </body>
 </html>
