@@ -274,7 +274,7 @@
             { title: 'Phad Thai', description: 'Experience the authentic flavors of Thailand with our signature dish.', imageUrl: 'https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg' },
             { title: 'Phad Thai', description: 'Experience the authentic flavors of Thailand with our signature dish.', imageUrl: 'https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg' },
             { title: 'Phad Thai', description: 'Experience the authentic flavors of Thailand with our signature dish.', imageUrl: 'https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg' }
-        ], 
+        ],
         cardsPerView: window.innerWidth < 768 ? 1 : 3,
         get maxSlide() {
             return Math.max(0, this.slides.length - this.cardsPerView);
@@ -291,12 +291,13 @@
             if (this.currentSlide > 0) {
                 this.currentSlide -= this.cardsPerView;
             }
+        },
+        updateCardsPerView() {
+            this.cardsPerView = window.innerWidth < 768 ? 1 : 3;
+            this.currentSlide = Math.min(this.currentSlide, this.maxSlide); 
         }
     }"
-    x-init="window.addEventListener('resize', () => {
-        cardsPerView = window.innerWidth < 768 ? 1 : 3;
-        currentSlide = 0;
-    })">
+    x-init="updateCardsPerView(); window.addEventListener('resize', updateCardsPerView)">
     
     <!-- Slides -->
     <div class="overflow-hidden">
