@@ -36,6 +36,7 @@
             left: 0;
             right: 0;
             z-index: 50;
+            background-color:#FCECE0;
         }
 
         .banner {
@@ -55,56 +56,15 @@
             }
         }
         
-        .popup {
-    display: none;
-    position: fixed; /* Changed to fixed to ensure it overlays the page */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensures the popup appears above other elements */
-}
-
-.popup-content {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 90%;
-    max-width: 400px;
-    position: relative;
-}
-
-.popup.active {
-    display: flex; /* Shows the popup when the class 'active' is added */
-}
-
-.close-btn {
-    position: absolute;
-    top: -60px;
-    right: -20px;
-    font-size: 50px;
-    color:red;
-    cursor: pointer;
-}
+        
 
        body {
             font-family: Fredoka;
         }
+  
+
     </style>
 
-<script>
-    function openPopup(popupId) {
- document.getElementById(popupId).classList.add('active'); // Adds 'active' to display the popup
-}
-
-function closePopup(popupId) {
- document.getElementById(popupId).classList.remove('active'); // Removes 'active' to hide the popup
-}
 
  </script>
  
@@ -113,11 +73,11 @@ function closePopup(popupId) {
   <body class="font-Fredoka bg-[#FCECE0]">
     <!-- Navigation Bar -->
     <nav>
-        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div class="relative flex h-16 items-center justify-between">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+            <div class="relative flex h-16 items-center justify-between ">
                 <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                     <!-- Mobile menu button-->
-                    <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger-btn">
+                    <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger-btn">
                         <span class="sr-only">Open main menu</span>
                         <svg class="block w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
@@ -131,10 +91,10 @@ function closePopup(popupId) {
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
                             <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto">
-                            <a href="history.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">Story</a>
-                            <a href="menu.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Menu</a>
-                            <a href="reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reviews</a>
-                            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Gift</a>
+                            <a href="history.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white" aria-current="page">Story</a>
+                            <a href="menu.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                            <a href="reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                            <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Gift</a>
                         </div>
                     </div>
                 </div>
