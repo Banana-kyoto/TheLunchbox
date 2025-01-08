@@ -59,6 +59,7 @@
         
 
        body {
+            margin-top: 4rem; 
             font-family: Fredoka;
         }
   
@@ -71,7 +72,7 @@
 </head>
 <body>
   <body class="font-Fredoka bg-[#FCECE0]">
-    <!-- Navigation Bar -->
+    <!-- Navigation Bar --> 
     <nav>
         <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
             <div class="relative flex h-16 items-center justify-between ">
@@ -115,7 +116,7 @@
                 <!-- Container for logo and close button (flex) -->
                 <div class="flex items-center justify-between w-full">
                     <!-- Logo -->
-                    <a href="index.html"><img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto"></a>
+                    <a href="index.html"> <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto"></a>
                     
                     <!-- Close Button -->
                     <button id="close-menu" class="text-gray-700 font-bold text-xl">X</button>
@@ -163,110 +164,42 @@
             });
         </script>
     </nav>
-    <!-- Main Content -->
+ 
+  <div>
+    <section class="bg-[#FCECE0]">
+  <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-pink-600">Contact Us</h2>
+      <p class="mb-8 lg:mb-16 font-light text-center text-gray-600 dark:text-gray-600 sm:text-xl">Have a question about The Lunchbox? Want to share feedback or suggest new features? Need assistance with your account? We're here to help!</p>
+      <form action="#" class="space-y-8">
+          <div>
+              <label for="email" class="block mb-2 text-sm font-medium text-pink-600">Your email</label>
+              <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required>
+          </div>
+          <div>
+              <label for="subject" class="block mb-2 text-sm font-medium text-pink-600">Subject</label>
+              <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you" required>
+          </div>
+          <div class="sm:col-span-2">
+              <label for="message" class="block mb-2 text-sm font-medium text-pink-600">Your message</label>
+              <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+          </div>
+     <div class="flex justify-center items-center ">
+ <button 
+  type="button" 
+  class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-pink-300">
+  Send Message
+</button>
 
-  <section id="on-the-menu" class="bg-pink-600 py-20 px-12 pt-20 pb-1">
-    <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl text-center mb-6 text-white">Customer Reviews</h2>
-</section>
-<div class="bg-[#FCECE0]"> 
-  <div class="mx-auto max-w-4xl p-4 pl-10 pr-10 ">
-    <div class="overflow-y-auto h-[500px] grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
-        <!-- Review 1 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Jane Doe</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐⭐</p>
-            <p class="mt-2">"The flavors are amazing! The traditional pinto tins add a nostalgic touch that makes every meal a delight."</p>
-            <p class="text-sm text-gray-400 mt-2">December 15, 2024</p>
-        </div>
-        <!-- Review 2 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">John Smith</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐☆</p>
-            <p class="mt-2">"Delivery was super fast, and the food was fresh and delicious. Highly recommend!"</p>
-            <p class="text-sm text-gray-400 mt-2">December 10, 2024</p>
-        </div>
-        <!-- Review 3 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Emily Davis</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐⭐</p>
-            <p class="mt-2">"Affordable and delicious! The packaging is eco-friendly, which I truly appreciate."</p>
-            <p class="text-sm text-gray-400 mt-2">November 28, 2024</p>
-        </div>
-        <!-- Review 4 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Michael Brown</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐☆</p>
-            <p class="mt-2">"Convenient and tasty meals delivered right to my door. Makes my life so much easier!"</p>
-            <p class="text-sm text-gray-400 mt-2">November 20, 2024</p>
-        </div>
-        <!-- Review 5 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Anna Wilson</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐⭐</p>
-            <p class="mt-2">"Fantastic service! Everything arrived on time, and the food was delicious."</p>
-            <p class="text-sm text-gray-400 mt-2">November 15, 2024</p>
-        </div>
-        <!-- Review 6 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">David Lee</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐☆</p>
-            <p class="mt-2">"Great food and convenient packaging. Will order again soon!"</p>
-            <p class="text-sm text-gray-400 mt-2">November 5, 2024</p>
-        </div>
-        <!-- Review 7 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Sophia Martinez</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐⭐</p>
-            <p class="mt-2">"Absolutely loved the meals! Perfect for my busy schedule."</p>
-            <p class="text-sm text-gray-400 mt-2">October 30, 2024</p>
-        </div>
-        <!-- Review 8 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Chris Taylor</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐☆☆</p>
-            <p class="mt-2">"Good taste, but the portion size could be a bit larger."</p>
-            <p class="text-sm text-gray-400 mt-2">October 20, 2024</p>
-        </div>
-        <!-- Review 9 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Lisa Green</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐⭐</p>
-            <p class="mt-2">"Delicious meals with a touch of home-cooked comfort. Highly recommend!"</p>
-            <p class="text-sm text-gray-400 mt-2">October 10, 2024</p>
-        </div>
-        <!-- Review 10 -->
-        <div class="bg-white shadow-md rounded-lg p-6">
-            <h3 class="text-xl font-semibold">Mark Johnson</h3>
-            <p class="text-sm text-gray-500">⭐⭐⭐⭐☆</p>
-            <p class="mt-2">"Affordable, tasty, and great customer service. I'm very satisfied."</p>
-            <p class="text-sm text-gray-400 mt-2">October 5, 2024</p>
-        </div>
-    </div>
-  </div>
-  
-<section class="community-lunchbox pl-10 pr-10 pb-10 pt-5">
-  <h2 class="text-xl mb-6 text-center text-pink-600">Join the Movement: What Our Community Loves About Our Lunchbox!</h2>
-  
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-    <!-- Row 1 -->
-    <div class="relative border rounded-lg overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1617391907589-9ba21f11c525?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGFwcHklMjBmYWNlJTIwZWF0aW5nfGVufDB8fDB8fHww" alt="Lunchbox Image 1" class="w-full h-full object-cover">
-    </div>
-    <div class="relative border rounded-lg overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1535802018956-d36e19a8e7e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGhhcHB5JTIwZmFjZSUyMGVhdGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Lunchbox Image 2" class="w-full h-full object-cover">
-    </div>
-    <div class="relative border rounded-lg overflow-hidden">
-      <img src="https://plus.unsplash.com/premium_photo-1700844301119-01e7d568e43c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGhhcHB5JTIwZmFjZSUyMGVhdGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Lunchbox Image 3" class="w-full h-full object-cover">
-    </div>
-    <div class="relative border rounded-lg overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1621354599094-1a4364b43914?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fGhhcHB5JTIwZmFjZSUyMGVhdGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Lunchbox Image 4" class="w-full h-full object-cover">
-    </div>
-  </div>
-</section>
+
+
 </div>
+      </form>
+  </div>
+</section>
+  </div>
+   
 
- <!-- footer-->
+   <!-- footer-->
 
 <footer class="bg-pink-600 py-10 px-6 sm:px-20 lg:px-30">
     <div class="container mx-auto">
@@ -311,10 +244,9 @@
             </a>
         </div>
     </div>
+
     <!-- Bottom Text -->
     <div class="mt-10 text-center text-gray-700 text-sm">
         &copy; 2025 The Lunchbox. All rights reserved.
     </div>
 </footer>
-</body>
-</section>
