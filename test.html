@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+
+    </script>
+  
+    <style>
+        /* Remove redundant styles for Tailwind responsiveness, keeping only necessary overrides */
+        @media (max-width: 768px) {
+            .banner {
+                background-position: right;
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color:#FCECE0;
+        }
+
+        .banner {
+            padding-top: calc(4rem + 20px); 
+            min-height: 100vh;
+            background-position: top center;
+        }
+
+        @media (max-width: 640px) {
+            .text-box {
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+        
+        
+
+       body {
+            font-family: Fredoka;
+        }
+  
+
+    </style>
+
+
+ </script>
+ 
+</head>
+<body>
+  <body class="font-Fredoka bg-[#FCECE0]">
+    <!-- Navigation Bar -->
+    <div> 
+    <nav>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+            <div class="relative flex h-16 items-center justify-between ">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger-btn">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="index.html">
+                                <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto" alt="Go to Index"> </a>
+                            <a href="history.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white" aria-current="page">Story</a>
+                            <a href="menu.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                            <a href="reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                            <a href="contact.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-yellow-300">
+                        <span class="sr-only">Order Now</span>
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div class="hidden sm:hidden fixed inset-0 bg-[#FCECE0] bg-opacity-100 z-50" id="mobile-menu">
+            <div class="flex flex-col items-center p-4 space-y-4">
+                <!-- Container for logo and close button (flex) -->
+                <div class="flex items-center justify-between w-full">
+                    <!-- Logo -->
+                    <a href="index.html"> <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto"></a>
+                    
+                    <!-- Close Button -->
+                    <button id="close-menu" class="text-gray-700 font-bold text-xl">X</button>
+                </div>
+    
+                <!-- Menu Links -->
+                <div class="flex flex-col items-center space-y-4 mt-6 ">
+                    <a href="history.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Story</a>
+                    <a href="menu.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                    <a href="reviews.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                    <a href="contact.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                </div>
+    
+                <!-- Order Now Button -->
+                <div class="absolute bottom-4 mb-4 w-full">
+                    <button type="button" class="w-full rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-yellow-300">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            // Toggle the mobile menu visibility when the hamburger button is clicked
+            document.getElementById('hamburger-btn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const hamburgerIcon = document.querySelector('#hamburger-btn svg:first-child');
+                const closeIcon = document.querySelector('#hamburger-btn svg:last-child');
+    
+                mobileMenu.classList.toggle('hidden'); // Toggle visibility of mobile menu
+                hamburgerIcon.classList.toggle('hidden'); // Hide hamburger icon
+                closeIcon.classList.toggle('hidden'); // Show close icon
+            });
+    
+            // Close the mobile menu when the close button is clicked
+            document.getElementById('close-menu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden'); // Hide the mobile menu
+                
+                // Reset hamburger to show the open icon
+                const hamburgerIcon = document.querySelector('#hamburger-btn svg:first-child');
+                const closeIcon = document.querySelector('#hamburger-btn svg:last-child');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        </script>
+    </nav>
+    </div>
+    <div>
+
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 pt-10">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Image Section -->
+                <div>
+                    <img src="https://via.placeholder.com/600x400" alt="Lunchbox" class="w-full h-full object-cover">
+                </div>
+
+                <!-- Details Section -->
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-green-600">Join Our Lunchbox Program</h2>
+                    <p class="mt-4 text-gray-700">
+                        Experience the warmth of freshly cooked meals made with love, delivered in eco-friendly lunchboxes that help reduce waste and care for the environment.
+                    </p>
+
+                    <ul class="mt-6 space-y-3">
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
+                            Authentic Thai flavors, home-cooked style
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
+                            Reusable lunchboxes to reduce plastic waste
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
+                            Diverse menu options for every meal
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
+                            Easy registration via website or app
+                        </li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <button class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Join Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subscription Plans Section -->
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800">Subscription Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                <!-- Plan 1 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                    <h3 class="text-xl font-semibold text-green-600">Daily Plan</h3>
+                    <p class="mt-2 text-gray-700">Perfect for those who need convenience on a daily basis</p>
+                    <p class="mt-4 text-2xl font-bold text-gray-800">99 THB/day</p>
+                    <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Select Plan</button>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                    <h3 class="text-xl font-semibold text-green-600">Weekly Plan</h3>
+                    <p class="mt-2 text-gray-700">Save more and enjoy special menus every week</p>
+                    <p class="mt-4 text-2xl font-bold text-gray-800">499 THB/week</p>
+                    <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Select Plan</button>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                    <h3 class="text-xl font-semibold text-green-600">Monthly Plan</h3>
+                    <p class="mt-2 text-gray-700">Best value with exclusive gifts</p>
+                    <p class="mt-4 text-2xl font-bold text-gray-800">1,899 THB/month</p>
+                    <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Select Plan</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container
