@@ -39,12 +39,13 @@
             background-color:#FCECE0;
         }
 
-        .banner {
-            padding-top: calc(4rem + 20px); 
-            min-height: 100vh;
-            background-position: top center;
-        }
+  
 
+        .banner {
+    padding-top: calc(60px + 20px); /* Space for the fixed navbar */
+    min-height: 100vh;
+    background-position: top center;
+}
         @media (max-width: 640px) {
             .text-box {
                 position: relative;
@@ -56,18 +57,28 @@
             }
         }
         
-        
+        #checkout-section {
+    position: -webkit-sticky; /* Support for older browsers */
+    position: sticky;
+    top: 60px; /* Adjust to create space below the fixed navbar */
+    padding-top: 10px; /* Ensure there's a space above the sticky element */
+    transition: padding-top 0.3s ease; /* Smooth transition */
+}
 
+/* Add extra padding for large screens */
+@media screen and (min-width: 1024px) {
+    #checkout-section.sticky-nav {
+        padding-top: 60px; /* Keep this in sync with nav's height */
+    }
+}
+
+        
        body {
             font-family: Fredoka;
         }
   
 
-    </style>
-
-
- </script>
- 
+    </style> 
 </head>
 <body>
   <body class="font-Fredoka bg-[#FCECE0]">
@@ -101,12 +112,6 @@
                     </div>
                 </div>
     
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <button type="button" class="relative rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-yellow-300">
-                        <span class="sr-only">Order Now</span>
-                        Order Now
-                    </button>
-                </div>
             </div>
         </div>
     
@@ -130,12 +135,6 @@
                     <a href="contact.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
                 </div>
     
-                <!-- Order Now Button -->
-                <div class="absolute bottom-4 mb-4 w-full">
-                    <button type="button" class="w-full rounded-full bg-pink-600 px-4 py-2 text-white hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-yellow-300">
-                        Order Now
-                    </button>
-                </div>
             </div>
         </div>
     
@@ -166,81 +165,278 @@
     </nav>
     </div>
     <div>
-
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8 pt-10">
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-            <div class="grid grid-cols-1 md:grid-cols-2">
-                <!-- Image Section -->
-                <div>
-                    <img src="https://via.placeholder.com/600x400" alt="Lunchbox" class="w-full h-full object-cover">
+    </div>
+    <div class="bg-[#FCECE0]">
+        <div class="text-center p-8 pt-20">
+            <h2 class=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white bg-pink-600 pt-5 pb-5">
+                Add extras
+            </h2>
+    <!--extra add -->
+      
+    <section class="bg-[#FCECE0] py-8 antialiased md:py-16">
+        <!-- ใช้ Grid แบ่ง Content และ Checkout -->
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 pl-12 pr-12 min-h-[500px]">
+          <!-- Cards Section -->
+          <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+              <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                <div class="border-4 border-yellow-300 rounded-lg">
+                  <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
                 </div>
-
-                <!-- Details Section -->
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-green-600">Join Our Lunchbox Program</h2>
-                    <p class="mt-4 text-gray-700">
-                        Experience the warmth of freshly cooked meals made with love, delivered in eco-friendly lunchboxes that help reduce waste and care for the environment.
-                    </p>
-
-                    <ul class="mt-6 space-y-3">
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
-                            Authentic Thai flavors, home-cooked style
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
-                            Reusable lunchboxes to reduce plastic waste
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
-                            Diverse menu options for every meal
-                        </li>
-                        <li class="flex items-center">
-                            <span class="w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center mr-3">✔</span>
-                            Easy registration via website or app
-                        </li>
-                    </ul>
-
-                    <div class="mt-6">
-                        <button class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Join Now</button>
+                <div class="p-6 border-none">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                    <div class="flex items-center space-x-2">
+                      <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                      <span class="text-sm">1</span>
+                      <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
                     </div>
+                  </div>
+                  <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
                 </div>
+              </div>
+            </div>
+          
+             <!-- Card 1 -->
+             <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+               <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+               <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+
+ <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+              <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                <div class="border-4 border-yellow-300 rounded-lg">
+                  <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                </div>
+                <div class="p-6 border-none">
+                  <div class="flex justify-between items-center">
+                    <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                    <div class="flex items-center space-x-2">
+                      <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                      <span class="text-sm">1</span>
+                      <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                    </div>
+                  </div>
+                  <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                </div>
+              </div>
+            </div>
+
+             <!-- Card 1 -->
+             <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+
+               <!-- Card 1 -->
+            <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105" onclick="openPopup('popup1')">
+                  <div class="border-4 border-yellow-300 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/60982df9899ff80ac258be5e/1652310608582-O0C9K9CJL206KQ94QTDO/IMG_0381.jpg" alt="Signature Dish" class="w-full h-64 object-cover rounded-lg">
+                  </div>
+                  <div class="p-6 border-none">
+                    <div class="flex justify-between items-center">
+                      <span class="text-sm font-medium text-pink-600">Pad Thai</span>
+                      <div class="flex items-center space-x-2">
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+                        <span class="text-sm">1</span>
+                        <button class="px-3 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+                      </div>
+                    </div>
+                    <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700">Add to Basket</button>
+                  </div>
+                </div>
+              </div>
+
+
+          </div>
+<!-- Checkout Section -->
+ 
+<div id="checkout-section" class="lg:sticky lg:top-4 w-full bg-white p-6 rounded-lg shadow-lg transition-all duration-300" style="height: 350px; overflow-y: auto;">
+    <h3 class="text-lg font-bold mb-4">My Cart</h3>
+    <div class="-my-3 divide-y divide-gray-200">
+        <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-normal text-gray-500">Subtotal</dt>
+            <dd class="text-base font-medium text-gray-900">฿119</dd>
+        </dl>
+        <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-normal text-gray-500">Extras</dt>
+            <dd class="text-base font-medium text-gray-900">฿15</dd>
+        </dl>
+        <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-normal text-gray-500">Savings</dt>
+            <dd class="text-base font-medium text-green-500">฿0</dd>
+        </dl>
+        <dl class="flex items-center justify-between gap-4 py-3">
+            <dt class="text-base font-bold text-gray-900">Total</dt>
+            <dd class="text-base font-bold text-gray-900">฿134</dd>
+        </dl>
+    </div>
+    <button class="mt-4 w-full bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+        Proceed to Payment
+    </button>
+</div>
+
+</section>
+</div>
+ <!-- footer-->
+
+ <footer class="bg-pink-600 py-10 px-6 sm:px-20 lg:px-30">
+    <div class="container mx-auto">
+        <!-- Newsletter Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold text-white mb-4">Join our newsletter to stay up to date</h3>
+            <div class="flex justify-center">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="w-full max-w-md p-3 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-pink-400"
+                >
+                <button 
+                    class="bg-yellow-300 text-pink-600 px-6 py-3 rounded-r-lg font-semibold hover:bg-green-800 transition">
+                    Subscribe
+                </button>
             </div>
         </div>
 
-        <!-- Subscription Plans Section -->
-        <section class="mt-12">
-            <h2 class="text-2xl font-bold text-gray-800">Subscription Plans</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-                <!-- Plan 1 -->
-                <div class="bg-white shadow-md rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-semibold text-green-600">Daily Plan</h3>
-                    <p class="mt-2 text-gray-700">Perfect for those who need convenience on a daily basis</p>
-                    <p class="mt-4 text-2xl font-bold text-gray-800">99 THB/day</p>
-                    <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Select Plan</button>
-                </div>
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-6">
+            <a href="#" aria-label="Facebook">
+                <img 
+                    src="https://static.vecteezy.com/system/resources/previews/022/013/808/non_2x/f-initial-letter-for-logo-company-isolated-vector.jpg" 
+                    alt="Facebook" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="Instagram">
+                <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Instagram_logo.png/768px-Instagram_logo.png" 
+                    alt="Instagram" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="TikTok">
+                <img 
+                    src="https://img.freepik.com/premium-vector/set-tiktok-app-icons-social-media-logo-vector-illustration_277909-592.jpg?semt=ais_hybrid" 
+                    alt="TikTok" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+        </div>
+    </div>
 
-                <!-- Plan 2 -->
-                <div class="bg-white shadow-md rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-semibold text-green-600">Weekly Plan</h3>
-                    <p class="mt-2 text-gray-700">Save more and enjoy special menus every week</p>
-                    <p class="mt-4 text-2xl font-bold text-gray-800">499 THB/week</p>
-                    <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Select Plan</button>
-                </div>
-
-                <!-- Plan 3 -->
-                <div class="bg-white shadow-md rounded-lg p-6 text-center">
-                    <h3 class="text-xl font-semibold text-green-600">Monthly Plan</h3>
-                    <p class="mt-2 text-gray-700">Best value with exclusive gifts</p>
-                    <p class="mt-4 text-2xl font-bold text-gray-800">1,899 THB/month</p>
-                    <button class="mt-4 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700">Select Plan</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 mt-12">
-        <div class="container
+    <!-- Bottom Text -->
+    <div class="mt-10 text-center text-gray-700 text-sm">
+        &copy; 2025 The Lunchbox. All rights reserved.
+    </div>
+</footer>
+</body>
+</section>
