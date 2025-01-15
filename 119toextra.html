@@ -77,7 +77,7 @@
   object-fit: cover; /* ครอบภาพให้พอดี */
   width: 100%;
 }
-        
+
        body {
             font-family: Fredoka;
         }
@@ -424,6 +424,9 @@
         window.onload = function() {
             // เพิ่มสินค้า Single Meal ค่าเริ่มต้นลงในตะกร้า
             addToCart("Single Meal", 119);
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+
         }
     </script>
     
