@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+
+    </script>
+  
+    <style>
+        /* Remove redundant styles for Tailwind responsiveness, keeping only necessary overrides */
+        @media (max-width: 768px) {
+            .banner {
+                background-position: right;
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color:#FCECE0;
+        }
+
+  
+
+        .banner {
+    padding-top: calc(60px + 20px); /* Space for the fixed navbar */
+    min-height: 100vh;
+    background-position: top center;
+}
+        @media (max-width: 640px) {
+            .text-box {
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+        
+        #checkout-section {
+    position: -webkit-sticky; /* Support for older browsers */
+    position: sticky;
+    top: 60px; /* Adjust to create space below the fixed navbar */
+    padding-top: 10px; /* Ensure there's a space above the sticky element */
+    transition: padding-top 0.3s ease; /* Smooth transition */
+}
+
+/* Add extra padding for large screens */
+@media screen and (min-width: 1024px) {
+    #checkout-section.sticky-nav {
+        padding-top: 60px; /* Keep this in sync with nav's height */
+    }
+}
+
+.card-img {
+  aspect-ratio: 4 / 3; /* กำหนดอัตราส่วนภาพ 4:3 */
+  object-fit: cover; /* ครอบภาพให้พอดี */
+  width: 100%;
+}
+        
+       body {
+            font-family: Fredoka;
+        }
+  
+
+    </style> 
+</head>
+<body>
+  <body class="font-Fredoka bg-[#FCECE0]">
+    <!-- Navigation Bar -->
+    <div> 
+    <nav>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+            <div class="relative flex h-16 items-center justify-between ">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger-btn">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="index.html">
+                                <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto" alt="Go to Index"> </a>
+                            <a href="history.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white" aria-current="page">Story</a>
+                            <a href="menu.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                            <a href="reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                            <a href="contact.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div class="hidden sm:hidden fixed inset-0 bg-[#FCECE0] bg-opacity-100 z-50" id="mobile-menu">
+            <div class="flex flex-col items-center p-4 space-y-4">
+                <!-- Container for logo and close button (flex) -->
+                <div class="flex items-center justify-between w-full">
+                    <!-- Logo -->
+                    <a href="index.html"> <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto"></a>
+                    
+                    <!-- Close Button -->
+                    <button id="close-menu" class="text-gray-700 font-bold text-xl">X</button>
+                </div>
+    
+                <!-- Menu Links -->
+                <div class="flex flex-col items-center space-y-4 mt-6 ">
+                    <a href="history.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Story</a>
+                    <a href="menu.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                    <a href="reviews.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                    <a href="contact.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                </div>
+    
+            </div>
+        </div>
+    
+        <script>
+            // Toggle the mobile menu visibility when the hamburger button is clicked
+            document.getElementById('hamburger-btn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const hamburgerIcon = document.querySelector('#hamburger-btn svg:first-child');
+                const closeIcon = document.querySelector('#hamburger-btn svg:last-child');
+    
+                mobileMenu.classList.toggle('hidden'); // Toggle visibility of mobile menu
+                hamburgerIcon.classList.toggle('hidden'); // Hide hamburger icon
+                closeIcon.classList.toggle('hidden'); // Show close icon
+            });
+    
+            // Close the mobile menu when the close button is clicked
+            document.getElementById('close-menu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden'); // Hide the mobile menu
+                
+                // Reset hamburger to show the open icon
+                const hamburgerIcon = document.querySelector('#hamburger-btn svg:first-child');
+                const closeIcon = document.querySelector('#hamburger-btn svg:last-child');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        </script>
+    </nav>
+    </div>
+    <div>
+    </div>
+    <div class="bg-[#FCECE0]">
+        <div class="text-center p-8 pt-20">
+            <h2 class=" text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white bg-pink-600 pt-5 pb-5">
+                Add extras
+            </h2>
+    <!--extra add -->
+    <section class="bg-[#FCECE0] py-8 antialiased md:py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 pl-12 pr-12 min-h-[500px]">
+            <!-- Cards Section -->
+            <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Card 1 -->
+                <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://missourigirlhome.com/wp-content/uploads/2023/01/perfect-jammy-eggs.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Egg Boil</span>
+                                <span class="text-sm font-medium text-gray-900">฿15</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Egg Boil', 15)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 2 -->
+                  <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://ellegourmet.ca/wp-content/uploads/2023/04/perfect-fried-eggs.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Fried Eggs</span>
+                                <span class="text-sm font-medium text-gray-900">฿15</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('>Fried Eggs', 15)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 3 -->
+                  <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2021/12/How-to-Make-an-Omelette-17.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Omelet</span>
+                                <span class="text-sm font-medium text-gray-900">฿20</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Omelet', 20)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Card 4 -->
+                 <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://www.thespruceeats.com/thmb/o3Pzvtz2z9aXnBZ-OxXJiy3lgTs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-fried-whitebait-with-aioli-1300842-hero-01-5d438ccc612f413ca7a06e26757f8378.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Fried Tyiny Fish</span>
+                                <span class="text-sm font-medium text-gray-900">฿40</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Fried Tyiny Fish', 40)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 5 -->
+                  <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://www.unileverfoodsolutions.co.th/dam/global-ufs/mcos/SEA/calcmenu/recipes/TH-recipes/soups/%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B1%E0%B8%94%E0%B9%84%E0%B8%AA%E0%B9%89/%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%A3%E0%B8%B0%E0%B8%A2%E0%B8%B1%E0%B8%94%E0%B9%84%E0%B8%AA%E0%B9%89_header.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Stuffed Bitter Gourd Broth </span>
+                                <span class="text-sm font-medium text-gray-900">฿60</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Stuffed Bitter Gourd Broth ', 60)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 6 -->
+                  <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://gowholehog.ca/wp-content/uploads/2022/06/Pork-jowl-cooked-in-oregano-and-fermented-chilies-1920x1080-1.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Grilled Pork Jowl</span>
+                                <span class="text-sm font-medium text-gray-900">฿80</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Grilled Pork Jowl', 80)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 7 -->
+                 <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://img.wongnai.com/p/1920x0/2019/12/19/2dd336d8f0c74274a74728de3c28841c.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600"> Chicken in Fish Sauce</span>
+                                <span class="text-sm font-medium text-gray-900">฿60</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart(' Chicken in Fish Sauce', 60)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Card 8 -->
+                  <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://www.maggi.co.th/sites/default/files/styles/home_stage_1500_700/public/srh_recipes/17eb33778c830a03c89952d463152258.jpg?h=4f5b30f1&itok=LCY1emSj" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Stir-fried Clams with Chilli Paste</span>
+                                <span class="text-sm font-medium text-gray-900">฿80</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Stir-fried Clams with Chilli Paste', 80)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Card 9 -->
+                 <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                    <div class="relative rounded-lg overflow-hidden transform transition duration-300 hover:scale-105">
+                        <div class="border-4 border-yellow-300 rounded-lg h-64">
+                            <img src="https://www.pholfoodmafia.com/wp-content/uploads/2021/12/5Tom-Kha-Gai.jpg" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 border-none">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-pink-600">Tom Kha Gai</span>
+                                <span class="text-sm font-medium text-gray-900">฿80</span>
+                            </div>
+                            <button class="mt-4 w-full bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700" onclick="addToCart('Tom Kha Gai',80)">Add to Basket</button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+    
+            <!-- Checkout Section -->
+            <div id="checkout-section" class="lg:sticky lg:top-4 w-full bg-white p-6 rounded-lg shadow-lg transition-all duration-300" style="height: 350px; overflow-y: auto;">
+                <h3 class="text-lg font-bold mb-4">My Cart</h3>
+                <div id="cart-items" class="-my-3 divide-y divide-gray-200">
+                    <!-- Items will be added here -->
+                </div>
+                <dl class="flex items-center justify-between gap-4 py-3">
+                    <dt class="text-base font-normal text-gray-500">Subtotal</dt>
+                    <dd class="text-base font-medium text-gray-900" id="subtotal">฿0</dd>
+                </dl>
+                <button class="mt-4 w-full bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-lg transition-colors duration-200">
+                    Proceed to Payment
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // ตะกร้าสินค้า
+        let cart = [];
+    
+        // ฟังก์ชันเพิ่มสินค้าลงในตะกร้า
+        function addToCart(name, price) {
+            // ตรวจสอบว่ามีสินค้านี้ในตะกร้าหรือยัง
+            let product = cart.find(item => item.name === name);
+            
+            if (product) {
+                // ถ้ามีสินค้าแล้ว, เพิ่มจำนวน
+                product.quantity += 1;
+            } else {
+                // ถ้าไม่มี, เพิ่มสินค้าลงในตะกร้าใหม่
+                cart.push({ name, price, quantity: 1 });
+            }
+    
+            // อัปเดตการแสดงผลของตะกร้า
+            updateCart();
+        }
+    
+        // ฟังก์ชันเพิ่มหรือลดจำนวนสินค้าในตะกร้า
+        function updateQuantity(name, change) {
+            let product = cart.find(item => item.name === name);
+    
+            // ถ้าเป็นสินค้า "Single Meal" จะไม่สามารถเพิ่มหรือลดจำนวนได้
+            if (product && name === "Single Meal") return;
+    
+            if (product) {
+                product.quantity += change;
+                if (product.quantity <= 0) {
+                    // ลบสินค้าออกจากตะกร้าหากจำนวนสินค้าต่ำกว่าหรือเท่ากับ 0
+                    cart = cart.filter(item => item.name !== name);
+                }
+            }
+    
+            // อัปเดตการแสดงผลของตะกร้า
+            updateCart();
+        }
+    
+        // ฟังก์ชันอัปเดตตะกร้า
+        function updateCart() {
+            let cartItemsHTML = '';
+            let subtotal = 0;
+    
+            // สร้างรายการสินค้าที่ถูกเลือกในตะกร้า
+            cart.forEach(item => {
+                if (item.name === "5 Meal") {
+                    // สำหรับ Single Meal ไม่มีปุ่ม + และ -
+                    cartItemsHTML += `
+                        <dl class="flex items-center justify-between gap-4 py-3" id="cart-item-${item.name}">
+                            <dt class="text-base font-normal text-gray-500">${item.name}</dt>
+                            <dd class="text-base font-medium text-gray-900">฿${item.price} x ${item.quantity}</dd>
+                        </dl>
+                    `;
+                } else {
+                    // สำหรับสินค้าที่ไม่ใช่ 5 Meal มีปุ่ม + และ -
+                    cartItemsHTML += `
+                        <dl class="flex items-center justify-between gap-4 py-3" id="cart-item-${item.name}">
+                            <dt class="text-base font-normal text-gray-500">${item.name}</dt>
+                            <dd class="text-base font-medium text-gray-900">฿${item.price} x ${item.quantity}</dd>
+                            <div class="flex space-x-2">
+                                <button class="px-2 py-1 bg-red-500 text-white rounded hover:bg-red-600" onclick="updateQuantity('${item.name}', -1)">-</button>
+                                <button class="px-2 py-1 bg-green-500 text-white rounded hover:bg-green-600" onclick="updateQuantity('${item.name}', 1)">+</button>
+                            </div>
+                        </dl>
+                    `;
+                }
+    
+                subtotal += item.price * item.quantity;
+            });
+    
+            // อัปเดตแสดงรายการสินค้าในตะกร้า
+            document.getElementById('cart-items').innerHTML = cartItemsHTML;
+    
+            // อัปเดตยอดรวม
+            document.getElementById('subtotal').innerText = `฿${subtotal}`;
+        }
+    
+        // ฟังก์ชันที่ทำงานเมื่อหน้าเว็บโหลดเสร็จ
+        window.onload = function() {
+            // เพิ่มสินค้า Single Meal ค่าเริ่มต้นลงในตะกร้า
+            addToCart("5 Meal", 595);
+        }
+    </script>
+    
+</div>
+ <!-- footer-->
+
+ <footer class="bg-pink-600 py-10 px-6 sm:px-20 lg:px-30">
+    <div class="container mx-auto">
+        <!-- Newsletter Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold text-white mb-4">Join our newsletter to stay up to date</h3>
+            <div class="flex justify-center">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="w-full max-w-md p-3 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-pink-400"
+                >
+                <button 
+                    class="bg-yellow-300 text-pink-600 px-6 py-3 rounded-r-lg font-semibold hover:bg-green-800 transition">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-6">
+            <a href="#" aria-label="Facebook">
+                <img 
+                    src="https://static.vecteezy.com/system/resources/previews/022/013/808/non_2x/f-initial-letter-for-logo-company-isolated-vector.jpg" 
+                    alt="Facebook" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="Instagram">
+                <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Instagram_logo.png/768px-Instagram_logo.png" 
+                    alt="Instagram" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="TikTok">
+                <img 
+                    src="https://img.freepik.com/premium-vector/set-tiktok-app-icons-social-media-logo-vector-illustration_277909-592.jpg?semt=ais_hybrid" 
+                    alt="TikTok" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="mt-10 text-center text-gray-700 text-sm">
+        &copy; 2025 The Lunchbox. All rights reserved.
+    </div>
+</footer>
+</body>
+</section>
