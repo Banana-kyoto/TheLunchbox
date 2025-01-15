@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+
+    </script>
+  
+    <style>
+        /* Remove redundant styles for Tailwind responsiveness, keeping only necessary overrides */
+        @media (max-width: 768px) {
+            .banner {
+                background-position: right;
+            }
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color:#FCECE0;
+        }
+
+  
+
+        .banner {
+    padding-top: calc(60px + 20px); /* Space for the fixed navbar */
+    min-height: 100vh;
+    background-position: top center;
+}
+        @media (max-width: 640px) {
+            .text-box {
+                position: relative;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+        
+        #checkout-section {
+    position: -webkit-sticky; /* Support for older browsers */
+    position: sticky;
+    top: 60px; /* Adjust to create space below the fixed navbar */
+    padding-top: 10px; /* Ensure there's a space above the sticky element */
+    transition: padding-top 0.3s ease; /* Smooth transition */
+}
+
+/* Add extra padding for large screens */
+@media screen and (min-width: 1024px) {
+    #checkout-section.sticky-nav {
+        padding-top: 60px; /* Keep this in sync with nav's height */
+    }
+}
+
+.card-img {
+  aspect-ratio: 4 / 3; /* กำหนดอัตราส่วนภาพ 4:3 */
+  object-fit: cover; /* ครอบภาพให้พอดี */
+  width: 100%;
+}
+        
+       body {
+            font-family: Fredoka;
+        }
+  
+
+    </style> 
+</head>
+<body>
+  <body class="font-Fredoka bg-[#FCECE0]">
+    <!-- Navigation Bar -->
+    <div> 
+    <nav>
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
+            <div class="relative flex h-16 items-center justify-between ">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <!-- Mobile menu button-->
+                    <button type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false" id="hamburger-btn">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="hidden sm:ml-6 sm:block">
+                        <div class="flex space-x-4">
+                            <a href="index.html">
+                                <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto" alt="Go to Index"> </a>
+                            <a href="history.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white" aria-current="page">Story</a>
+                            <a href="menu.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                            <a href="reviews.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                            <a href="contact.html" class="rounded-md px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <!-- Mobile Menu -->
+        <div class="hidden sm:hidden fixed inset-0 bg-[#FCECE0] bg-opacity-100 z-50" id="mobile-menu">
+            <div class="flex flex-col items-center p-4 space-y-4">
+                <!-- Container for logo and close button (flex) -->
+                <div class="flex items-center justify-between w-full">
+                    <!-- Logo -->
+                    <a href="index.html"> <img src="https://img5.pic.in.th/file/secure-sv1/messageImage_1735875159000.png" class="w-12 h-auto"></a>
+                    
+                    <!-- Close Button -->
+                    <button id="close-menu" class="text-gray-700 font-bold text-xl">X</button>
+                </div>
+    
+                <!-- Menu Links -->
+                <div class="flex flex-col items-center space-y-4 mt-6 ">
+                    <a href="history.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Story</a>
+                    <a href="menu.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Menu</a>
+                    <a href="reviews.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Reviews</a>
+                    <a href="contact.html" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-700 hover:text-white">Contact Us</a>
+                </div>
+    
+            </div>
+        </div>
+    
+        <script>
+            // Toggle the mobile menu visibility when the hamburger button is clicked
+            document.getElementById('hamburger-btn').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const hamburgerIcon = document.querySelector('#hamburger-btn svg:first-child');
+                const closeIcon = document.querySelector('#hamburger-btn svg:last-child');
+    
+                mobileMenu.classList.toggle('hidden'); // Toggle visibility of mobile menu
+                hamburgerIcon.classList.toggle('hidden'); // Hide hamburger icon
+                closeIcon.classList.toggle('hidden'); // Show close icon
+            });
+    
+            // Close the mobile menu when the close button is clicked
+            document.getElementById('close-menu').addEventListener('click', function() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                mobileMenu.classList.add('hidden'); // Hide the mobile menu
+                
+                // Reset hamburger to show the open icon
+                const hamburgerIcon = document.querySelector('#hamburger-btn svg:first-child');
+                const closeIcon = document.querySelector('#hamburger-btn svg:last-child');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        </script>
+    </nav>
+    </div>
+    <div>
+    </div>
+    <div class="bg-[#FCECE0]">
+       
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-20 pl-10 pr-10 pb-10">
+            <!-- Left Column - Form -->
+            <div class="space-y-6">
+                <!-- Shipping Information -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-bold mb-4">Shipping Information</h2>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="John">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="Doe">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                            <input type="tel" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="0812345678">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
+                            <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="123 Main St">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">District</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="Watthana">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Province</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="Bangkok">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Postal Code</label>
+                            <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="10110">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h2 class="text-xl font-bold mb-4">Payment Method</h2>
+                    <div class="space-y-4">
+                        <!-- Credit Card Option -->
+                        <label class="block">
+                            <div class="flex items-center space-x-3 p-4 border rounded-lg cursor-pointer hover:border-pink-500">
+                                <input type="radio" name="payment" value="credit" class="form-radio text-pink-600" checked>
+                                <span>Credit Card</span>
+                                <div class="flex space-x-2 ml-auto">
+                                    <img src="/api/placeholder/40/24" alt="Visa" class="rounded">
+                                    <img src="/api/placeholder/40/24" alt="Mastercard" class="rounded">
+                                </div>
+                            </div>
+                        </label>
+
+                        <!-- Credit Card Form -->
+                        <div id="credit-card-form" class="mt-4 space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Card Number</label>
+                                <input type="text" id="card-number" maxlength="19" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Expiry Date</label>
+                                    <input type="text" id="expiry-date" maxlength="5" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="MM/YY">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">CVV</label>
+                                    <input type="password" id="cvv" maxlength="3" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="123">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Cardholder Name</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500" placeholder="John Doe">
+                            </div>
+                        </div>
+
+        
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Cart -->
+            <div class="lg:sticky lg:top-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+                <div id="cart-items" class="divide-y divide-gray-200">
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                <a href="success.html"> 
+                <button class="mt-6 w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-lg transition-colors duration-200 font-semibold">
+                    Confirm Order
+                </button></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Previous card formatting code remains the same
+
+            // Get cart data from localStorage or use empty array if not found
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            function updateCartDisplay() {
+                let cartItemsHTML = '';
+                let subtotal = 0;
+
+                // Generate HTML for each cart item
+                cart.forEach(item => {
+                    cartItemsHTML += `
+                        <div class="py-3 flex justify-between">
+                            <div>
+                                <p class="text-gray-600">${item.name}</p>
+                                <p class="text-sm text-gray-500">Quantity: ${item.quantity}</p>
+                            </div>
+                            <span class="font-medium">฿${item.price * item.quantity}</span>
+                        </div>
+                    `;
+                    subtotal += item.price * item.quantity;
+                });
+
+                // Add subtotal, shipping, and total
+                cartItemsHTML += `
+                    <div class="py-3 flex justify-between">
+                        <span class="text-gray-600">Subtotal</span>
+                        <span class="font-medium">฿${subtotal}</span>
+                    </div>
+                    <div class="py-3 flex justify-between">
+                        <span class="text-gray-600">Shipping</span>
+                        <span class="font-medium">Free</span>
+                    </div>
+                    <div class="py-3 flex justify-between">
+                        <span class="font-semibold">Total</span>
+                        <span class="font-bold text-pink-600 text-lg">฿${subtotal}</span>
+                    </div>
+                `;
+
+                // Update the cart display
+                $('#cart-items').html(cartItemsHTML);
+            }
+
+            // Initial cart display
+            updateCartDisplay();
+        });
+      </script>
+  <!-- footer-->
+
+ <footer class="bg-pink-600 py-10 px-6 sm:px-20 lg:px-30">
+    <div class="container mx-auto">
+        <!-- Newsletter Section -->
+        <div class="text-center mb-8">
+            <h3 class="text-2xl font-semibold text-white mb-4">Join our newsletter to stay up to date</h3>
+            <div class="flex justify-center">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    class="w-full max-w-md p-3 rounded-l-lg border border-gray-300 focus:ring-2 focus:ring-pink-400"
+                >
+                <button 
+                    class="bg-yellow-300 text-pink-600 px-6 py-3 rounded-r-lg font-semibold hover:bg-green-800 transition">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-6">
+            <a href="#" aria-label="Facebook">
+                <img 
+                    src="https://static.vecteezy.com/system/resources/previews/022/013/808/non_2x/f-initial-letter-for-logo-company-isolated-vector.jpg" 
+                    alt="Facebook" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="Instagram">
+                <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Instagram_logo.png/768px-Instagram_logo.png" 
+                    alt="Instagram" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+            <a href="#" aria-label="TikTok">
+                <img 
+                    src="https://img.freepik.com/premium-vector/set-tiktok-app-icons-social-media-logo-vector-illustration_277909-592.jpg?semt=ais_hybrid" 
+                    alt="TikTok" 
+                    class="w-8 h-8 hover:scale-110 transition-transform"
+                >
+            </a>
+        </div>
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="mt-10 text-center text-gray-700 text-sm">
+        &copy; 2025 The Lunchbox. All rights reserved.
+    </div>
+</footer></section>
+</body>
+</body>
+</html>
