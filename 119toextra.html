@@ -428,6 +428,76 @@
         localStorage.setItem('cart', JSON.stringify(cart));
 
         }
+        $(document).ready(function() {
+    // Load cart data from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Function to update both Cart and Order Summary sections
+    function updateCartDisplay() {
+        let cartItemsHTML = '';
+        let subtotal = 0;
+
+        // Generate cart items list for both sections
+        cart.forEach(item => {
+            cartItemsHTML += `
+                <div class="py-3 flex justify-between">
+                    <div>
+                        <p class="text-gray-600">${item.name}</p>
+                        <p class="text-sm text-gray-500">Quantity: ${item.quantity}</p>
+                    </div>
+                    <span class="font-medium">฿${item.price * item.quantity}</span>
+                </div>
+            `;
+            subtotal += item.price * item.quantity;
+        });
+
+        // Add subtotal, shipping, and total to the cart items display
+        cartItemsHTML += `
+            <div class="py-3 flex justify-between">
+                <span class="text-gray-600">Subtotal</span>
+                <span class="font-medium">฿${subtotal}</span>
+            </div>
+            <div class="py-3 flex justify-between">
+                <span class="text-gray-600">Shipping</span>
+                <span class="font-medium">Free</span>
+            </div>
+            <div class="py-3 flex justify-between">
+                <span class="font-semibold">Total</span>
+                <span class="font-bold text-pink-600 text-lg">฿${subtotal}</span>
+            </div>
+        `;
+
+        // Update the Cart Section with the cart items
+        $('#cart-items').html(cartItemsHTML);
+
+        // Update Order Summary Section
+        let orderSummaryHTML = '';
+        let total = 0;
+
+        cart.forEach(item => {
+            orderSummaryHTML += `
+                <div class="flex justify-between border-b pb-2 mb-2">
+                    <span>${item.name} (x${item.quantity})</span>
+                    <span>฿${item.price * item.quantity}</span>
+                </div>
+            `;
+            total += item.price * item.quantity;
+        });
+
+        // Display order summary
+        document.getElementById('order-summary-items').innerHTML = orderSummaryHTML;
+
+        // Update total in order summary
+        document.getElementById('order-summary-total').innerText = `฿${total}`;
+    }
+
+    // Update cart display when the page loads
+    updateCartDisplay();
+});
+// Update localStorage when cart changes
+localStorage.setItem('cart', JSON.stringify(cart));
+
+
     </script>
     
 </div>

@@ -264,60 +264,88 @@
             </div>
 
             <!-- Right Column - Cart -->
-            <div class="lg:sticky lg:top-4">
-            <div class="bg-white p-6 rounded-lg shadow-lg">
-                <h2 class="text-xl font-bold mb-4">Order Summary</h2>
-                <div id="cart-items" class="divide-y divide-gray-200">
-                    <!-- Cart items will be dynamically inserted here -->
-                </div>
-                <a href="success.html"> 
-                <button class="mt-6 w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-lg transition-colors duration-200 font-semibold">
-                    Confirm Order
-                </button></a>
-            </div>
+         <!-- Order Summary Section -->
+<div class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-xl font-bold mb-4">Order Summary</h2>
+    <div id="order-summary-items" class="divide-y divide-gray-200">
+        <!-- รายการสินค้าจะถูกแทรกที่นี่ -->
+    </div>
+    <div class="py-4">
+        <div class="flex justify-between">
+            <span class="text-gray-600">Total</span>
+            <span class="font-bold text-pink-600 text-lg" id="order-summary-total">฿0</span>
         </div>
+    </div>
+    <a href="success.html"> 
+        <button class="mt-6 w-full bg-pink-600 hover:bg-pink-700 text-white py-3 rounded-lg transition-colors duration-200 font-semibold">
+            Confirm Order
+        </button>
+    </a>
+</div>            
     </div>
 
     <script>
-        $(document).ready(function() {
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    function updateCartDisplay() {
-        let cartItemsHTML = '';
-        let subtotal = 0;
+        function updateCartDisplay() {
+    let cartItemsHTML = '';
+    let subtotal = 0;
 
-        cart.forEach(item => {
-            cartItemsHTML += `
-                <div class="py-3 flex justify-between">
-                    <div>
-                        <p class="text-gray-600">${item.name}</p>
-                        <p class="text-sm text-gray-500">Quantity: ${item.quantity}</p>
-                    </div>
-                    <span class="font-medium">฿${item.price * item.quantity}</span>
-                </div>
-            `;
-            subtotal += item.price * item.quantity;
-        });
-
+    // แสดงรายการสินค้าในตะกร้า
+    cart.forEach(item => {
         cartItemsHTML += `
             <div class="py-3 flex justify-between">
-                <span class="text-gray-600">Subtotal</span>
-                <span class="font-medium">฿${subtotal}</span>
-            </div>
-            <div class="py-3 flex justify-between">
-                <span class="text-gray-600">Shipping</span>
-                <span class="font-medium">Free</span>
-            </div>
-            <div class="py-3 flex justify-between">
-                <span class="font-semibold">Total</span>
-                <span class="font-bold text-pink-600 text-lg">฿${subtotal}</span>
+                <div>
+                    <p class="text-gray-600">${item.name}</p>
+                    <p class="text-sm text-gray-500">Quantity: ${item.quantity}</p>
+                </div>
+                <span class="font-medium">฿${item.price * item.quantity}</span>
             </div>
         `;
+        subtotal += item.price * item.quantity;
+    });
 
-        $('#cart-items').html(cartItemsHTML);
-    }
+    // เพิ่ม subtotal, ค่าจัดส่ง และยอดรวม
+    cartItemsHTML += `
+        <div class="py-3 flex justify-between">
+            <span class="text-gray-600">Subtotal</span>
+            <span class="font-medium">฿${subtotal}</span>
+        </div>
+        <div class="py-3 flex justify-between">
+            <span class="text-gray-600">Shipping</span>
+            <span class="font-medium">Free</span>
+        </div>
+        <div class="py-3 flex justify-between">
+            <span class="font-semibold">Total</span>
+            <span class="font-bold text-pink-600 text-lg">฿${subtotal}</span>
+        </div>
+    `;
+    $('#cart-items').html(cartItemsHTML);
+
+    let orderSummaryHTML = '';
+    let total = 0;
+
+    cart.forEach(item => {
+        orderSummaryHTML += `
+            <div class="flex justify-between border-b pb-2 mb-2">
+                <span>${item.name} (x${item.quantity})</span>
+                <span>฿${item.price * item.quantity}</span>
+            </div>
+        `;
+        total += item.price * item.quantity;
+    });
+
+    document.getElementById('order-summary-items').innerHTML = orderSummaryHTML;
+    document.getElementById('order-summary-total').innerText = `฿${total}`;
+
+    // อัปเดตข้อมูลใน localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// อัปเดตการแสดงผลเมื่อหน้าโหลด
+$(document).ready(function() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
     updateCartDisplay();
 });
+
 
       </script>
   <!-- footer-->
